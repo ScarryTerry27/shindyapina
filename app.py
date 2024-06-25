@@ -5,7 +5,7 @@ import streamlit as st
 def show_sidebar():
     with st.sidebar:
         if not st.session_state['main']:
-            st.button("На главный экран", on_click=change_version, kwargs={"obj": 'main.txt'})
+            st.button("На главный экран", on_click=change_version, kwargs={"obj": 'main'})
         st.write('Какой то текст')
 
 
