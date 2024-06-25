@@ -50,8 +50,6 @@ def calculate_osh():
 
 def calculate_osh_main():
     show_sidebar()
-    if "flag" not in st.session_state:
-        st.session_state['flag'] = None
 
     if not st.session_state['flag']:
         with st.form("CALCULATE"):
@@ -66,11 +64,15 @@ def calculate_osh_main():
 
 def change_version(obj):
     lst = ["main", "veroyatnost", "ketamin"]
+    if "flag" not in st.session_state:
+        st.session_state['flag'] = None
     for item in lst:
         if item == obj:
             st.session_state[item] = True
         else:
             st.session_state[item] = False
+
+    st.session_state['flag'] = None
 
 
 def main_page():
