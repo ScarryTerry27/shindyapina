@@ -6,7 +6,6 @@ def show_sidebar():
     with st.sidebar:
         if not st.session_state['main']:
             st.button("На главный экран", on_click=change_version, kwargs={"obj": 'main'})
-        st.write('Какой то текст')
 
 
 def calculate_doza():
@@ -76,8 +75,7 @@ def change_version(obj):
 
 
 def main_page():
-    show_sidebar()
-    st.title("🩺 Главная страница")
+    st.header("🩺 Вероятность высокоинтенсивной послеоперационной боли")
     with open('texts/main.txt', 'r', encoding='utf-8') as file:
         text = file.read()
 
